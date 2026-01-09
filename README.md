@@ -53,27 +53,28 @@ graph TD
     class Actions,HomePage,CoinPage,Search server;
     class CoinGecko external;
 ```
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
-
-
 ## <a name="features">🔋 Features</a>
 
-👉 **Home Dashboard**: Displays crucial market health indicators like **Total Market Cap** and **BTC & ETH dominance**, alongside a dynamic list of **Trending Tokens**, all retrieved instantly using the CoinGecko `/global` and `/search/trending` endpoints.
+**🚀 Mission Control Dashboard**
+Instant access to global market health. Track Market Cap, Dominance, and Trending Coins in real-time.
 
-👉 **Token Discovery Page**: A comprehensive, sortable and searchable table featuring key token metrics (Price, 24h change, Market Cap Rank) for mass market analysis, powered by the scalable `/coins/markets` REST API and optimized with pagination for efficient browsing.
+**💎 Token Explorer**
+Filter, sort, and discover hidden gems among thousands of assets with our high-performance table.
 
-👉 **Detailed Token Overview**: Provides an immediate summary of any selected token, including its logo, current price, and market cap rank, utilizing the `/coins/{id}` REST API for core data and the **CGSimplePrice WebSocket** for continuous, live price monitoring.
+**⚡ Live Market Pulse**
+Witness the market move dynamically. Real-time price updates and live orderbook streams via WebSockets—no refreshing needed.
 
-👉 **Interactive Candlestick Chart**: Integrates **TradingView Lightweight Charts** to visualize market trends and price action with surgical precision, rendering multi-timeframe OHLCV data fetched from CoinGecko’s high-performance market endpoints.
+**📈 Pro-Grade Charting**
+Technical analysis made beautiful. Interactive TradingView charts with multi-timeframe OHLCV data.
 
-👉 **Real-Time Trades & Orderbook**: Features a live stream of market activity exactly as it happens on the exchange, using low-latency WebSockets to display a constant flow of buy/sell orders and recent trade executions.
+**� Smart Currency Converter**
+Seamlessly calculate value across dozens of fiat and crypto currencies instantly.
 
-👉 **Smart Currency Converter**: An interactive tool that allows users to instantly compute coin amounts into dozens of supported fiat and crypto currencies, leveraging the `/simple/supported_vs_currencies` and `/simple/price` endpoints for accurate conversions.
+**🔍 Universal Search**
+Find any asset in milliseconds with our optimized global search.
 
-👉 **Exchange & Trading Pairs**: Allows users to analyze trading context by displaying aggregated lists of exchanges and available trading pairs, with all data sourced directly from the dedicated `/exchanges` and `/exchanges/{id}/tickers` REST APIs.
-
-👉 **Global Search Functionality**: A powerful, unified search bar that allows users to quickly locate any crypto asset by name or symbol, linking directly to the respective Token Detail Page via the CoinGecko `/search` and `/coins/{id}` REST endpoints.
+**🏦 Deep Market Analysis**
+Explore exchanges, trading pairs, and tickers to understand the full liquidity landscape.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
