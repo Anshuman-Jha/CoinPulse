@@ -20,18 +20,42 @@
 
 ## <a name="introduction">✨ Introduction</a>
 
-CryptoPulse is a high-performance analytics dashboard built with Next.js 16, TailwindCSS v4, and shadcn/ui, delivering real-time market intelligence via CoinGecko’s API and WebSockets. It features high-frequency price tracking and live orderbook streams for low-latency updates, paired with interactive TradingView candlestick charts to visualize OHLCV data with surgical precision. From a dynamic homepage showcasing global stats and trending assets to robust token pages with multi-fiat converters and advanced search tables, the platform provides a modular, developer-friendly stack optimized for speed and clarity.
+Experience the pulse of the crypto market in real-time. **CoinPulse** isn't just a dashboard; it's your high-frequency command center for Web3 intelligence. Built on the bleeding edge with **Next.js 16**, **Tailwind v4**, and **CoinGecko's Pro API**, we deliver sub-second market updates, live orderbook streams, and surgical-grade charting powered by TradingView. Whether you're tracking global dominance or hunting the next moonshot, CoinPulse gives you the unfair advantage of speed, clarity, and precision.
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+### System Architecture
+
+```mermaid
+graph TD
+    User[User / Client] -->|Visits Page| NextJS[Next.js App Router]
+    
+    subgraph Frontend
+        NextJS -->|Renders| HomePage[Home Page]
+        NextJS -->|Renders| CoinPage[Coin Details Page]
+        NextJS -->|Renders| Search[Search Component]
+    end
+    
+    subgraph Server_Actions [Server Actions / Lib]
+        HomePage -->|Fetches Data| Actions[coingecko.actions.ts]
+        CoinPage -->|Fetches Data| Actions
+        Search -->|Queries| Actions
+    end
+    
+    subgraph External_API [External Services]
+        Actions -->|HTTP Requests| CoinGecko[CoinGecko API]
+        CoinGecko -->|JSON Response| Actions
+    end
+
+    classDef client fill:#1a1b26,stroke:#ff007f,stroke-width:2px,color:#fff;
+    classDef server fill:#1a1b26,stroke:#7aa2f7,stroke-width:2px,color:#fff;
+    classDef external fill:#1a1b26,stroke:#9ece6a,stroke-width:2px,color:#fff;
+
+    class User,NextJS client;
+    class Actions,HomePage,CoinPage,Search server;
+    class CoinGecko external;
+```
 
 <a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
-
-- **[Next.js]
-- **[TypeScript]
-- **[Tailwind CSS]
-- **[Shadcn/ui]
 
 ## <a name="features">🔋 Features</a>
 
@@ -51,7 +75,14 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 👉 **Global Search Functionality**: A powerful, unified search bar that allows users to quickly locate any crypto asset by name or symbol, linking directly to the respective Token Detail Page via the CoinGecko `/search` and `/coins/{id}` REST endpoints.
 
-And many more, including code architecture and reusability.
+## <a name="tech-stack">⚙️ Tech Stack</a>
+
+- **[Next.js]
+- **[TypeScript]
+- **[Tailwind CSS]
+- **[Shadcn/ui]
+- **[CoinGecko API]
+TradingView Lightweight Charts
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -91,8 +122,6 @@ COINGECKO_API_KEY=
 NEXT_PUBLIC_COINGECKO_WEBSOCKET_URL=
 NEXT_PUBLIC_COINGECKO_API_KEY=
 ```
-
-Replace the placeholder values with your real credentials. You can get these by signing up at: [**CoinGecko API**](https://jsm.dev/crypto-gecko).
 
 **Running the Project**
 
